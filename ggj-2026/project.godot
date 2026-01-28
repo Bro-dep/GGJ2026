@@ -14,6 +14,12 @@ config/name="ggj2026"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Ui/": "green"
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
