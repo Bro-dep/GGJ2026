@@ -2,17 +2,156 @@
 
 [ext_resource type="Script" uid="uid://ypkyg0v0c23g" path="res://ui.gd" id="1_riu2h"]
 [ext_resource type="PackedScene" uid="uid://b0dks2ahh8vot" path="res://Scenes/mask_swticher.tscn" id="2_c1u0e"]
+[ext_resource type="Script" uid="uid://c50jkt6injo31" path="res://wheel_options.gd" id="3_wq1jk"]
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="4_m5hdx"]
+
+[sub_resource type="Animation" id="Animation_riu2h"]
+resource_name = "Fade in"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskSwticher:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskSwticher:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c1u0e"]
+resource_name = "Fade out"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskSwticher:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskSwticher:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wq1jk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskSwticher:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskSwticher:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5hdx"]
+_data = {
+&"Fade in": SubResource("Animation_riu2h"),
+&"Fade out": SubResource("Animation_c1u0e"),
+&"RESET": SubResource("Animation_wq1jk")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml7og"]
+script = ExtResource("3_wq1jk")
+name = "None"
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq1jk"]
+atlas = ExtResource("4_m5hdx")
+region = Rect2(32, 32, 0, 0)
+script = ExtResource("3_wq1jk")
+name = "Test 1"
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5hdx"]
+script = ExtResource("3_wq1jk")
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gddcu"]
+script = ExtResource("3_wq1jk")
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsbnh"]
+script = ExtResource("3_wq1jk")
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_105hs"]
+script = ExtResource("3_wq1jk")
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phs6s"]
+script = ExtResource("3_wq1jk")
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8ady"]
+script = ExtResource("3_wq1jk")
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba6dq"]
+script = ExtResource("3_wq1jk")
+metadata/_custom_type_script = "uid://c50jkt6injo31"
 
 [node name="MaskSwap Test" type="Node" unique_id=9349471]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1776837827]
 script = ExtResource("1_riu2h")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=1775354660]
+libraries/ = SubResource("AnimationLibrary_m5hdx")
+
 [node name="Label" type="Label" parent="UI" unique_id=371797038]
-offset_left = 576.0
-offset_top = 324.0
-offset_right = 616.0
-offset_bottom = 347.0
+offset_right = 169.0
+offset_bottom = 59.0
 
 [node name="MaskSwticher" parent="UI" unique_id=18925870 instance=ExtResource("2_c1u0e")]
 visible = false
+modulate = Color(1, 1, 1, 0)
+highlight_color = Color(0.7162962, 0.7162962, 0.7162962, 1)
+outer_radius = 200
+inner_radius = 60
+line_width = 5
+options = Array[ExtResource("3_wq1jk")]([SubResource("AtlasTexture_ml7og"), SubResource("AtlasTexture_wq1jk"), SubResource("AtlasTexture_m5hdx"), SubResource("AtlasTexture_gddcu"), SubResource("AtlasTexture_wsbnh"), SubResource("AtlasTexture_105hs"), SubResource("AtlasTexture_phs6s"), SubResource("AtlasTexture_u8ady"), SubResource("AtlasTexture_ba6dq")])
