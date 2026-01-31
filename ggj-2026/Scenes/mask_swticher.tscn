@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b0dks2ahh8vot"]
+
+[ext_resource type="Script" uid="uid://df77h1npxrghe" path="res://Scenes/mask_swticher.gd" id="1_bd2rk"]
+
+[node name="MaskSwticher" type="Control" unique_id=18925870]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bd2rk")
+bkg_color = Color(0.3779188, 0.3779189, 0.37791875, 1)
+outer_radius = 274
+inner_radius = 68
+line_width = 8

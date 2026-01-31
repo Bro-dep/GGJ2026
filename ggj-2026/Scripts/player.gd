@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		dash()
 	
 	move_and_slide()
-
+ 
 func dash():
 	canMove = false
 	velocity = velocity * 3

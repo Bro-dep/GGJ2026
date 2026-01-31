@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcnwh57bhop32" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://b0dks2ahh8vot" path="res://Scenes/mask_swticher.tscn" id="3_6t5aa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
 radius = 64.03124
@@ -28,6 +29,8 @@ one_shot = true
 
 [node name="DashDuration" type="Timer" parent="Timers" unique_id=37914402]
 wait_time = 0.4
+
+[node name="MaskSwticher" parent="." unique_id=18925870 instance=ExtResource("3_6t5aa")]
 
 [connection signal="timeout" from="Timers/DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Timers/DashDuration" to="." method="_on_dash_duration_timeout"]
