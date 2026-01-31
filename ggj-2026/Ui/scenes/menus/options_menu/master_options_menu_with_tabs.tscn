@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c3xb3gjmh2a0c"]
+
+[ext_resource type="Script" path="res://addons/maaacks_menus_template/base/nodes/menus/options_menu/paginated_tab_container.gd" id="1_4a8c5"]
+[ext_resource type="PackedScene" path="res://Ui/scenes/menus/options_menu/input/input_options_menu.tscn" id="2_42yr3"]
+[ext_resource type="PackedScene" path="res://Ui/scenes/menus/options_menu/input/input_extras_menu.tscn" id="3_8l615"]
+[ext_resource type="PackedScene" path="res://Ui/scenes/menus/options_menu/audio/audio_options_menu.tscn" id="4_nq5hd"]
+[ext_resource type="PackedScene" path="res://Ui/scenes/menus/options_menu/video/video_options_menu_with_extras.tscn" id="5_gfcod"]
+
+[node name="MasterOptionsMenu" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+script = ExtResource("1_4a8c5")
+
+[node name="Controls" parent="." instance=ExtResource("2_42yr3")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Inputs" parent="." instance=ExtResource("3_8l615")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Audio" parent="." instance=ExtResource("4_nq5hd")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Video" parent="." instance=ExtResource("5_gfcod")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
