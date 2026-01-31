@@ -1,10 +1,8 @@
 # Attribution
 ## Collaborators
 
-### Role
-Person 1  
-Person 2  
-[Person w/ Link]()  
+### Role 
+[Luna](https://brodep.itch.io)  
 
 ## Sourced
 ### Asset Type
@@ -36,3 +34,8 @@ License: [MIT License](LICENSE.txt)
 Author: [Linus Torvalds](https://github.com/torvalds)  
 Source: [git-scm.com](https://git-scm.com/downloads)  
 License: [GNU General Public License version 2](https://opensource.org/licenses/GPL-2.0)
+
+## Tutorials
+#### Radial Menu
+[Radial Menu Tool Selection](https://www.youtube.com/watch?v=TtziEJZtWXc)
+Author: [Squadron Studio](https://www.youtube.com/@squadron_studio)
