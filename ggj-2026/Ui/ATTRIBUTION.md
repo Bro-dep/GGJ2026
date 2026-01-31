@@ -1,8 +1,8 @@
 # Attribution
-## Collaborators
 
-### Role 
+### Creators :3 
 [Luna](https://brodep.itch.io)  
+[Sylvie](https://github.com/serendipitycs)
 
 ## Sourced
 ### Asset Type
