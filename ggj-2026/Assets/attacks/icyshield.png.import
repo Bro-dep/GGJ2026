@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnw0g4lrsn8kk"
-path="res://.godot/imported/LevelExit1.png-bab288be5deb3e9987b13d05609a0b42.ctex"
+uid="uid://mskh51lpak7v"
+path="res://.godot/imported/icyshield.png-d9b260d2d80b220dfce1c65d1f80bce9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ui/assets/level/LevelExit1.png"
-dest_files=["res://.godot/imported/LevelExit1.png-bab288be5deb3e9987b13d05609a0b42.ctex"]
+source_file="res://Assets/attacks/icyshield.png"
+dest_files=["res://.godot/imported/icyshield.png-d9b260d2d80b220dfce1c65d1f80bce9.ctex"]
 
 [params]
 

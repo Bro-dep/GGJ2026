@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buti6yd6blqeb"
-path="res://.godot/imported/gjchar1wtihmasks-sheet.png-8a263e41166cc1746b853fb8ef815638.ctex"
+uid="uid://05isxf0nafk1"
+path="res://.godot/imported/lavapile.png-60027c68f75d8dffc1021fe43ef4e1ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ui/assets/character/gjchar1wtihmasks-sheet.png"
-dest_files=["res://.godot/imported/gjchar1wtihmasks-sheet.png-8a263e41166cc1746b853fb8ef815638.ctex"]
+source_file="res://Assets/attacks/lavapile.png"
+dest_files=["res://.godot/imported/lavapile.png-60027c68f75d8dffc1021fe43ef4e1ea.ctex"]
 
 [params]
 
