@@ -19,3 +19,15 @@ sprite_frames = SubResource("SpriteFrames_fkybt")
 
 [node name="DelLater" type="Sprite2D" parent="." unique_id=2077342248]
 texture = ExtResource("2_6t5aa")
+
+[node name="Timers" type="Node" parent="." unique_id=995159541]
+
+[node name="DashTimer" type="Timer" parent="Timers" unique_id=1059935232]
+wait_time = 0.5
+one_shot = true
+
+[node name="DashDuration" type="Timer" parent="Timers" unique_id=37914402]
+wait_time = 0.4
+
+[connection signal="timeout" from="Timers/DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Timers/DashDuration" to="." method="_on_dash_duration_timeout"]
