@@ -78,7 +78,7 @@ class Movement:
 	func walk(sprite,ani):
 		var direction := Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
 		if direction:
-			print_debug(ani)
+			#print_debug(ani)
 			velocity = direction * speed
 			if direction == Vector2(0,1):
 				sprite.play(ani[1])

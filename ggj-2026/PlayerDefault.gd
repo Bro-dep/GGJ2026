@@ -14,13 +14,11 @@ func Enter():
 	mask_switcher.maskChanged.connect(_on_mask_switcher_mask_changed)
 
 func Exit():
-	super()
 	mask_switcher.maskChanged.disconnect(_on_mask_switcher_mask_changed)
 	
 func Update(delta: float):
-	if Input.is_action_just_pressed("Test"):
-		Transitioned.emit(self,"PlayerWaterMask")
-		
+	pass
+	
 func Physics_Update(_delta: float):
 	physics(player1)
 	
