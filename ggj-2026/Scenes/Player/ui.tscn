@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tytkvph7rc68"]
 
-[ext_resource type="Script" uid="uid://ypkyg0v0c23g" path="res://ui.gd" id="1_qdvrb"]
+[ext_resource type="Script" uid="uid://ypkyg0v0c23g" path="res://Scenes/Player/Scripts/ui.gd" id="1_qdvrb"]
 [ext_resource type="PackedScene" uid="uid://b0dks2ahh8vot" path="res://Scenes/Player/mask_swticher.tscn" id="2_nf4gj"]
 
 [sub_resource type="Animation" id="Animation_riu2h"]

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bcnwh57bhop32" path="res://Scenes/Player/Scripts/Player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://buti6yd6blqeb" path="res://Assets/character/gjchar1wtihmasks-sheet.png" id="2_cvnsp"]
-[ext_resource type="Script" uid="uid://dmbq44e8jwddu" path="res://State Machine.gd" id="3_mtuoh"]
-[ext_resource type="Script" uid="uid://6pabeqivtc0g" path="res://PlayerDefault.gd" id="4_htcer"]
-[ext_resource type="Script" uid="uid://bkfaynbtolru" path="res://PlayerWaterMask.gd" id="5_htcer"]
-[ext_resource type="Script" uid="uid://bletsbug86s66" path="res://PlayerAirMask.gd" id="6_dd0ac"]
-[ext_resource type="Script" uid="uid://b2pdqh4d26cbd" path="res://PlayerEarthMask.gd" id="7_0u5uq"]
-[ext_resource type="Script" uid="uid://dwfablskxdl58" path="res://PlayerFireMask.gd" id="8_jlvik"]
+[ext_resource type="Script" uid="uid://dmbq44e8jwddu" path="res://Scenes/Player/Scripts/State Machine.gd" id="3_mtuoh"]
+[ext_resource type="Script" uid="uid://6pabeqivtc0g" path="res://Scenes/Player/Scripts/PlayerDefault.gd" id="4_htcer"]
+[ext_resource type="Script" uid="uid://bkfaynbtolru" path="res://Scenes/Player/Scripts/PlayerWaterMask.gd" id="5_htcer"]
+[ext_resource type="Script" uid="uid://bletsbug86s66" path="res://Scenes/Player/Scripts/PlayerAirMask.gd" id="6_dd0ac"]
+[ext_resource type="Script" uid="uid://b2pdqh4d26cbd" path="res://Scenes/Player/Scripts/PlayerEarthMask.gd" id="7_0u5uq"]
+[ext_resource type="Script" uid="uid://dwfablskxdl58" path="res://Scenes/Player/Scripts/PlayerFireMask.gd" id="8_jlvik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ks1b7"]
 atlas = ExtResource("2_cvnsp")

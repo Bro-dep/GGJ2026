@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0dks2ahh8vot"]
 
 [ext_resource type="Script" uid="uid://df77h1npxrghe" path="res://Scenes/Player/Scripts/mask_swticher.gd" id="1_gwxwj"]
-[ext_resource type="Script" uid="uid://c50jkt6injo31" path="res://wheel_options.gd" id="2_8lqsv"]
+[ext_resource type="Script" uid="uid://c50jkt6injo31" path="res://Scenes/Player/Scripts/wheel_options.gd" id="2_8lqsv"]
 [ext_resource type="Texture2D" uid="uid://cjgya4nviwy2j" path="res://Assets/icons/firemask.png" id="3_pfege"]
 [ext_resource type="Texture2D" uid="uid://c6s26d48n3xv1" path="res://Assets/icons/earthmask.png" id="4_mjlnv"]
 [ext_resource type="Texture2D" uid="uid://bwqa2y3j0a2wy" path="res://Assets/icons/watermask.png" id="5_k34c8"]
