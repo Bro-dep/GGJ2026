@@ -75,7 +75,7 @@ class Movement:
 	var speed: float = 300.0
 	var velocity : Vector2
 	
-	func _init(speed1) -> void:
+	func _init(speed1) -> void:## WORKING HERE 
 		speed = speed1
 	
 	func walk(sprite,ani):
