@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+## Player Script
+
 const SPEED = 300.0
 
 
@@ -19,26 +21,26 @@ var canMove := true
 func _physics_process(_delta: float) -> void:
 
 	#region Moevment
-	var direction := Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
-	if direction and canMove:
-		velocity = direction * SPEED
-		#NOTE Need to change walk animation based on mask equiped
-		if direction == Vector2(0,1):
-			sprite.set_animation("walkdown")
-		elif direction == Vector2(-1,0):
-			sprite.set_animation("walkleft")
-		elif direction == Vector2(1,0):
-			sprite.set_animation("walkright")
-		elif direction == Vector2(0,-1):
-			sprite.set_animation("walkup")
+	#var direction := Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
+	#if direction and canMove:
+		#velocity = direction * SPEED
+		##NOTE Need to change walk animation based on mask equiped
+		#if direction == Vector2(0,1):
+			#sprite.set_animation("walkdown")
+		#elif direction == Vector2(-1,0):
+			#sprite.set_animation("walkleft")
+		#elif direction == Vector2(1,0):
+			#sprite.set_animation("walkright")
+		#elif direction == Vector2(0,-1):
+			#sprite.set_animation("walkup")
 		
-	elif canMove:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-		if sprite.get_animation() != "default":
-			sprite.set_animation("default")
-	if Input.is_action_just_pressed("Dash"):
-		dash()
+	#elif canMove:
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
+		#velocity.y = move_toward(velocity.y, 0, SPEED)
+		#if sprite.get_animation() != "default":
+			#sprite.set_animation("default")
+	#if Input.is_action_just_pressed("Dash"):
+		#dash()
 	
 	move_and_slide()
 	#endregion 
@@ -67,17 +69,33 @@ func _on_mask_switcher_mask_changed(name):
 	pass
 #endregion
 
+
+## Defines movement functions for player movement.
 class Movement:
-	func walk(velocity,sprite,ani):
+	var speed: float = 300.0
+	var velocity : Vector2
+	
+	func _init(speed1) -> void:
+		speed = speed1
+	
+	func walk(sprite,ani):
 		var direction := Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
 		if direction:
-			velocity = direction * SPEED
-			#NOTE Need to change walk animation based on mask equiped
+			velocity = direction * speed
 			if direction == Vector2(0,1):
-				sprite.set_animation(ani[0])
-			elif direction == Vector2(-1,0):
 				sprite.set_animation(ani[1])
-			elif direction == Vector2(1,0):
+			elif direction == Vector2(-1,0):
 				sprite.set_animation(ani[2])
-			elif direction == Vector2(0,-1):
+			elif direction == Vector2(1,0):
 				sprite.set_animation(ani[3])
+			elif direction == Vector2(0,-1):
+				sprite.set_animation(ani[4])
+		
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+			if sprite.get_animation() != ani[0]:
+				sprite.set_animation(ani[0])
+		return velocity
+		
+		

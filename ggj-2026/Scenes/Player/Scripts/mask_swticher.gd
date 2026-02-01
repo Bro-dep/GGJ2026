@@ -95,5 +95,22 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 func Close():
+	#print_debug(options[select].name)
 	maskChanged.emit(options[select].name)
 	return options[select].name
+	
+func switch(name):
+		#print_debug(name)
+		match name:
+			"None":
+				#print_debug("PlayerDefault")
+				return "PlayerDefault"
+			"Air Mask":
+				return "PlayerAirMask"
+			"Fire Mask":
+				return "PlayerFireMask"
+			"Earth Mask":
+				return "PlayerEarthMask"
+			"Water Mask":
+				#print_debug("PlayerWaterMask")
+				return "PlayerWaterMask"

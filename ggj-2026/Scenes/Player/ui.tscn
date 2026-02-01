@@ -104,6 +104,7 @@ offset_right = 169.0
 offset_bottom = 59.0
 
 [node name="MaskSwticher" parent="." unique_id=18925870 instance=ExtResource("2_nf4gj")]
+unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0)
 highlight_color = Color(0.7162962, 0.7162962, 0.7162962, 1)

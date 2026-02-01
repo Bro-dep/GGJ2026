@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://c50jkt6injo31"
 atlas = ExtResource("5_k34c8")
 region = Rect2(0, 0, 19, 17)
 script = ExtResource("2_8lqsv")
-name = "Water"
+name = "Water Mask"
 metadata/_custom_type_script = "uid://c50jkt6injo31"
 
 [node name="MaskSwticher" type="Control" unique_id=18925870]
