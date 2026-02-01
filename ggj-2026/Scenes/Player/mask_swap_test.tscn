@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dq62yykl37uc0"]
+
+[ext_resource type="PackedScene" uid="uid://tytkvph7rc68" path="res://Scenes/Player/ui.tscn" id="1_0b61i"]
+
+[node name="MaskSwap Test" type="Node" unique_id=9349471]
+
+[node name="UI" parent="." unique_id=1208099098 instance=ExtResource("1_0b61i")]

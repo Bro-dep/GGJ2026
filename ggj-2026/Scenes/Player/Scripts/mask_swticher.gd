@@ -1,7 +1,10 @@
 @tool
 extends Control
+class_name Mask_Switcher
 
-const SPRITE_SIZE = Vector2(32,32)
+const SPRITE_SIZE = Vector2(64,64)
+
+signal maskChanged(selected)
 
 @export var bkg_color : Color
 @export var line_color : Color
@@ -91,7 +94,6 @@ func _process(_delta: float) -> void:
 	
 	queue_redraw()
 
-
 func Close():
-	pass
+	maskChanged.emit(options[select].name)
 	return options[select].name

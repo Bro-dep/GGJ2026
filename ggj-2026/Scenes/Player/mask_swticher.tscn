@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b0dks2ahh8vot"]
+
+[ext_resource type="Script" uid="uid://df77h1npxrghe" path="res://Scenes/Player/Scripts/mask_swticher.gd" id="1_gwxwj"]
+[ext_resource type="Script" uid="uid://c50jkt6injo31" path="res://wheel_options.gd" id="2_8lqsv"]
+[ext_resource type="Texture2D" uid="uid://cjgya4nviwy2j" path="res://Assets/icons/firemask.png" id="3_pfege"]
+[ext_resource type="Texture2D" uid="uid://c6s26d48n3xv1" path="res://Assets/icons/earthmask.png" id="4_mjlnv"]
+[ext_resource type="Texture2D" uid="uid://bwqa2y3j0a2wy" path="res://Assets/icons/watermask.png" id="5_k34c8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j01p4"]
+script = ExtResource("2_8lqsv")
+name = "None"
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pqfs3"]
+load_path = "res://.godot/imported/airmask.png-57aae9e8e6db91e5c5867ec2770dab72.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew20s"]
+atlas = SubResource("CompressedTexture2D_pqfs3")
+region = Rect2(0, 0, 19, 17)
+script = ExtResource("2_8lqsv")
+name = "Air Mask"
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuiw5"]
+atlas = ExtResource("3_pfege")
+region = Rect2(0, 0, 19, 17)
+script = ExtResource("2_8lqsv")
+name = "Fire Mask"
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7wce"]
+atlas = ExtResource("4_mjlnv")
+region = Rect2(0, 0, 19, 17)
+script = ExtResource("2_8lqsv")
+name = "Earth Mask"
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olnou"]
+atlas = ExtResource("5_k34c8")
+region = Rect2(0, 0, 19, 17)
+script = ExtResource("2_8lqsv")
+name = "Water"
+metadata/_custom_type_script = "uid://c50jkt6injo31"
+
+[node name="MaskSwticher" type="Control" unique_id=18925870]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwxwj")
+bkg_color = Color(0.3779188, 0.3779189, 0.37791875, 1)
+highlight_color = Color(0.6378432, 0.6378432, 0.63784313, 1)
+outer_radius = 150
+inner_radius = 30
+line_width = 8
+options = Array[ExtResource("2_8lqsv")]([SubResource("AtlasTexture_j01p4"), SubResource("AtlasTexture_ew20s"), SubResource("AtlasTexture_vuiw5"), SubResource("AtlasTexture_k7wce"), SubResource("AtlasTexture_olnou")])

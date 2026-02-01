@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://tytkvph7rc68"]
+
+[ext_resource type="Script" uid="uid://ypkyg0v0c23g" path="res://ui.gd" id="1_qdvrb"]
+[ext_resource type="PackedScene" uid="uid://b0dks2ahh8vot" path="res://Scenes/Player/mask_swticher.tscn" id="2_nf4gj"]
+
+[sub_resource type="Animation" id="Animation_riu2h"]
+resource_name = "Fade in"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskSwticher:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskSwticher:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c1u0e"]
+resource_name = "Fade out"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskSwticher:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskSwticher:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wq1jk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskSwticher:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskSwticher:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5hdx"]
+_data = {
+&"Fade in": SubResource("Animation_riu2h"),
+&"Fade out": SubResource("Animation_c1u0e"),
+&"RESET": SubResource("Animation_wq1jk")
+}
+
+[node name="UI" type="CanvasLayer" unique_id=1208099098]
+script = ExtResource("1_qdvrb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=445668481]
+libraries/ = SubResource("AnimationLibrary_m5hdx")
+
+[node name="Label" type="Label" parent="." unique_id=2095591770]
+offset_right = 169.0
+offset_bottom = 59.0
+
+[node name="MaskSwticher" parent="." unique_id=18925870 instance=ExtResource("2_nf4gj")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+highlight_color = Color(0.7162962, 0.7162962, 0.7162962, 1)
+outer_radius = 200
+inner_radius = 60
+line_width = 5
