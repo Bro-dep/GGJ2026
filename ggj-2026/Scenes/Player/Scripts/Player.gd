@@ -75,27 +75,25 @@ class Movement:
 	var speed: float = 300.0
 	var velocity : Vector2
 	
-	func _init(speed1) -> void:## WORKING HERE 
-		speed = speed1
-	
 	func walk(sprite,ani):
 		var direction := Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
 		if direction:
+			print_debug(ani)
 			velocity = direction * speed
 			if direction == Vector2(0,1):
-				sprite.set_animation(ani[1])
+				sprite.play(ani[1])
 			elif direction == Vector2(-1,0):
-				sprite.set_animation(ani[2])
+				sprite.play(ani[2])
 			elif direction == Vector2(1,0):
-				sprite.set_animation(ani[3])
+				sprite.play(ani[3])
 			elif direction == Vector2(0,-1):
-				sprite.set_animation(ani[4])
+				sprite.play(ani[4])
 		
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 			if sprite.get_animation() != ani[0]:
-				sprite.set_animation(ani[0])
+				sprite.play(ani[0])
 		return velocity
-		
-		
+	
+	

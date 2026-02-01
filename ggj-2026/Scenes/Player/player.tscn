@@ -209,7 +209,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_r5xpd")
 }],
 "loop": true,
-"name": &"waterdefualt",
+"name": &"waterdefault",
 "speed": 6.0
 }, {
 "frames": [{
@@ -279,9 +279,9 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=150848784]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_fkybt")
-animation = &"waterdefualt"
+animation = &"waterdefault"
 autoplay = "default"
-frame_progress = 0.73388356
+frame_progress = 0.44698876
 
 [node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=881295009]
 position = Vector2(0, 8)
@@ -308,14 +308,14 @@ shape = SubResource("CapsuleShape2D_6t5aa")
 script = ExtResource("3_mtuoh")
 inital_state = NodePath("PlayerDefault")
 
-[node name="PlayerDefault" type="Node" parent="StateMachine" unique_id=1554216409 node_paths=PackedStringArray("player")]
+[node name="PlayerDefault" type="Node" parent="StateMachine" unique_id=1554216409 node_paths=PackedStringArray("player1")]
 script = ExtResource("4_htcer")
-player = NodePath("../..")
+player1 = NodePath("../..")
 metadata/_custom_type_script = "uid://6pabeqivtc0g"
 
-[node name="PlayerWaterMask" type="Node" parent="StateMachine" unique_id=1561038030 node_paths=PackedStringArray("player")]
+[node name="PlayerWaterMask" type="Node" parent="StateMachine" unique_id=1561038030 node_paths=PackedStringArray("player1")]
 script = ExtResource("5_htcer")
-player = NodePath("../..")
+player1 = NodePath("../..")
 metadata/_custom_type_script = "uid://bkfaynbtolru"
 
 [connection signal="timeout" from="Timers/DashTimer" to="." method="_on_dash_timer_timeout"]
