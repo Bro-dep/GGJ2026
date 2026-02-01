@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnw0g4lrsn8kk"
-path="res://.godot/imported/LevelExit1.png-2350c0c71d9c537b523de77c64806092.ctex"
+uid="uid://cnd41t3c4mhek"
+path="res://.godot/imported/evilreddit-sheet.png-099184abcddb374fe30517e7271eb1a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/level/LevelExit1.png"
-dest_files=["res://.godot/imported/LevelExit1.png-2350c0c71d9c537b523de77c64806092.ctex"]
+source_file="res://Assets/character/evilreddit-sheet.png"
+dest_files=["res://.godot/imported/evilreddit-sheet.png-099184abcddb374fe30517e7271eb1a8.ctex"]
 
 [params]
 
