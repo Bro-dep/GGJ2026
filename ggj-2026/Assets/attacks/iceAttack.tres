@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bngxbg1tcjd3i"]
+
+[ext_resource type="Texture2D" uid="uid://i76dwtifcttb" path="res://Assets/attacks/icyattack-sheet.png" id="1_s0stw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr2qt"]
+atlas = ExtResource("1_s0stw")
+region = Rect2(0, 0, 18, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl4hk"]
+atlas = ExtResource("1_s0stw")
+region = Rect2(18, 0, 18, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4467"]
+atlas = ExtResource("1_s0stw")
+region = Rect2(36, 0, 18, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr2qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl4hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4467")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]

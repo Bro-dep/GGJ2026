@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bcnwh57bhop32" path="res://Scenes/Player/Scripts/Player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://buti6yd6blqeb" path="res://Assets/character/gjchar1wtihmasks-sheet.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://cp4j6gjybsi0p" path="res://Scenes/Player/hp.gd" id="3_gk6dx"]
 [ext_resource type="Script" uid="uid://dmbq44e8jwddu" path="res://Scenes/Player/Scripts/State Machine.gd" id="3_mtuoh"]
 [ext_resource type="Script" uid="uid://6pabeqivtc0g" path="res://Scenes/Player/Scripts/PlayerDefault.gd" id="4_htcer"]
+[ext_resource type="Script" uid="uid://dhvpo3yrpn13t" path="res://Scenes/Player/HurtBox2D.gd" id="4_jhyir"]
 [ext_resource type="Script" uid="uid://bkfaynbtolru" path="res://Scenes/Player/Scripts/PlayerWaterMask.gd" id="5_htcer"]
+[ext_resource type="Script" uid="uid://blgkiyvf536nv" path="res://PlayerAttack.gd" id="5_oikmp"]
+[ext_resource type="Script" uid="uid://2clsoe2uwryl" path="res://Scenes/AttackBox.gd" id="6_06tpx"]
 [ext_resource type="Script" uid="uid://bletsbug86s66" path="res://Scenes/Player/Scripts/PlayerAirMask.gd" id="6_dd0ac"]
 [ext_resource type="Script" uid="uid://b2pdqh4d26cbd" path="res://Scenes/Player/Scripts/PlayerEarthMask.gd" id="7_0u5uq"]
 [ext_resource type="Script" uid="uid://dwfablskxdl58" path="res://Scenes/Player/Scripts/PlayerFireMask.gd" id="8_jlvik"]
@@ -608,6 +612,8 @@ height = 16.0
 radius = 8.4
 height = 27.999998
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g0yx"]
+
 [node name="Player" type="CharacterBody2D" unique_id=1820626433]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_cvnsp")
@@ -622,22 +628,32 @@ autoplay = "default"
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_cvnsp")
 
-[node name="Timers" type="Node" parent="." unique_id=995159541]
+[node name="HealthManager" type="Node2D" parent="." unique_id=469091733]
+script = ExtResource("3_gk6dx")
 
-[node name="DashTimer" type="Timer" parent="Timers" unique_id=1059935232]
-wait_time = 0.5
-one_shot = true
+[node name="Area2D" type="Area2D" parent="HealthManager" unique_id=91735903 node_paths=PackedStringArray("healthManager") groups=["Player"]]
+script = ExtResource("4_jhyir")
+healthManager = NodePath("..")
 
-[node name="DashDuration" type="Timer" parent="Timers" unique_id=37914402]
-wait_time = 0.4
-
-[node name="HP" type="Node2D" parent="." unique_id=469091733]
-
-[node name="Area2D" type="Area2D" parent="HP" unique_id=91735903]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HP/Area2D" unique_id=449489767]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthManager/Area2D" unique_id=449489767]
 position = Vector2(0, 1.1999999)
 shape = SubResource("CapsuleShape2D_6t5aa")
+
+[node name="PlayerAttack" type="Node2D" parent="." unique_id=47391263 node_paths=PackedStringArray("attackBox")]
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("5_oikmp")
+attackBox = NodePath("AttackBox")
+metadata/_custom_type_script = "uid://blgkiyvf536nv"
+
+[node name="AttackBox" type="Area2D" parent="PlayerAttack" unique_id=1297436856 groups=["Player"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("6_06tpx")
+type = "Player"
+metadata/_custom_type_script = "uid://2clsoe2uwryl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAttack/AttackBox" unique_id=655361530]
+shape = SubResource("RectangleShape2D_7g0yx")
 
 [node name="StateMachine" type="Node" parent="." unique_id=519688362 node_paths=PackedStringArray("inital_state")]
 script = ExtResource("3_mtuoh")
@@ -668,5 +684,19 @@ script = ExtResource("8_jlvik")
 player1 = NodePath("../..")
 metadata/_custom_type_script = "uid://dwfablskxdl58"
 
+[node name="Timers" type="Node" parent="." unique_id=995159541]
+
+[node name="DashTimer" type="Timer" parent="Timers" unique_id=1059935232]
+wait_time = 0.5
+one_shot = true
+
+[node name="DashDuration" type="Timer" parent="Timers" unique_id=37914402]
+wait_time = 0.4
+
+[node name="AttackCd" type="Timer" parent="Timers" unique_id=1131322033]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="Timers/DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Timers/DashDuration" to="." method="_on_dash_duration_timeout"]
+[connection signal="timeout" from="Timers/AttackCd" to="StateMachine/PlayerDefault" method="_on_attack_cd_timeout"]

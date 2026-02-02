@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://yyytmuch1peh" path="res://Ui/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_7omah"]
 [ext_resource type="PackedScene" uid="uid://beh7gogufmc87" path="res://Ui/scenes/windows/main_menu_options_window.tscn" id="3_aow0e"]
 [ext_resource type="PackedScene" uid="uid://3xbd4v0f1t8c" path="res://Ui/scenes/windows/main_menu_credits_window.tscn" id="4_d2u3s"]
+[ext_resource type="Texture2D" uid="uid://dmq3nd6tgo7nv" path="res://Assets/level/Background1.png" id="5_7omah"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -315,6 +316,7 @@ graph_offset = Vector2(-180.277, 49)
 
 [node name="MainMenu" unique_id=1623692898 instance=ExtResource("1_yl4wu")]
 script = ExtResource("2_7omah")
+game_scene_path = "uid://btamqkkj5q4bl"
 options_packed_scene = ExtResource("3_aow0e")
 credits_packed_scene = ExtResource("4_d2u3s")
 
@@ -326,14 +328,27 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
+[node name="BackgroundTextureRect" parent="." index="4"]
+texture = ExtResource("5_7omah")
+
+[node name="TitleMargin" parent="MenuContainer" index="0"]
+theme_override_constants/margin_top = 90
+
 [node name="TitleContainer" parent="MenuContainer/TitleMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "ggj2026"
+text = "Naria's Mask"
+auto_update = false
+
+[node name="SubTitleMargin" parent="MenuContainer" index="1"]
+theme_override_constants/margin_top = 165
 
 [node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
+
+[node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0"]
+text = "For GGJ 2026"
 
 [node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" index="0"]
 modulate = Color(1, 1, 1, 0)

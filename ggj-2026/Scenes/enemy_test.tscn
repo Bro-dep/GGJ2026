@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dtkvtxu84j53k"]
+
+[ext_resource type="Script" uid="uid://cp4j6gjybsi0p" path="res://Scenes/Player/hp.gd" id="1_kxk0d"]
+[ext_resource type="Script" uid="uid://dhvpo3yrpn13t" path="res://Scenes/Player/HurtBox2D.gd" id="2_oyc1c"]
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_c3qj7"]
+[ext_resource type="Script" uid="uid://2clsoe2uwryl" path="res://Scenes/AttackBox.gd" id="4_oyc1c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c3qj7"]
+radius = 7.071068
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_421n3"]
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6jhh"]
+radius = 18.0
+
+[node name="EnemyTest" type="CharacterBody2D" unique_id=1388401607]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=597993536]
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("3_c3qj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2005585827]
+shape = SubResource("CircleShape2D_c3qj7")
+
+[node name="HealthManager" type="Node2D" parent="." unique_id=248659038]
+script = ExtResource("1_kxk0d")
+metadata/_custom_type_script = "uid://cp4j6gjybsi0p"
+
+[node name="HurtBox2D" type="Area2D" parent="HealthManager" unique_id=483851267 node_paths=PackedStringArray("healthManager") groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_oyc1c")
+healthManager = NodePath("..")
+metadata/_custom_type_script = "uid://dhvpo3yrpn13t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthManager/HurtBox2D" unique_id=363824247]
+shape = SubResource("CircleShape2D_421n3")
+
+[node name="Attackbox" type="Area2D" parent="." unique_id=1272758663 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_oyc1c")
+type = "Enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attackbox" unique_id=515700089]
+shape = SubResource("CircleShape2D_h6jhh")

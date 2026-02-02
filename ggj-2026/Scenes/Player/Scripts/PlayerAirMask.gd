@@ -11,16 +11,24 @@ func Enter():
 	move_speed = move_speed1
 	animation = ["airdefault","airwalkdown","airwalkleft","airwalkright","walkup"] 
 	setup(player1)
+	pAttack = get_parent().get_parent().find_child("PlayerAttack")
 	mask_switcher.maskChanged.connect(_on_mask_switcher_mask_changed)
 
 func Exit():
 	mask_switcher.maskChanged.disconnect(_on_mask_switcher_mask_changed)
 	
 func Update(delta: float):
-	pass
+	if Input.is_action_just_pressed("Attack") and !attackCD:
+		#attackCD = true
+		#$"../../Timers/AttackCd".start()
+		#Instanciate projectile
+		#pAttack.damage(10)
+		var spriteFrame = preload("res://Assets/attacks/airAttack.tres")
+		pAttack.shoot(10, spriteFrame, 1, 400)
+		#print_debug("attack")
 		
 func Physics_Update(_delta: float):
-	physics(player1)
+	physics(player1, canWalk)
 	
 	
 func _on_mask_switcher_mask_changed(maskname):

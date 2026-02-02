@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://btamqkkj5q4bl"]
+
+[ext_resource type="Texture2D" uid="uid://dmq3nd6tgo7nv" path="res://Assets/level/Background1.png" id="1_iti4p"]
+[ext_resource type="PackedScene" uid="uid://tytkvph7rc68" path="res://Scenes/Player/ui.tscn" id="2_dtjkg"]
+[ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://Scenes/Player/player.tscn" id="2_eglq2"]
+[ext_resource type="PackedScene" uid="uid://dtkvtxu84j53k" path="res://Scenes/enemy_test.tscn" id="4_rsyfn"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dtjkg"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(0, 0, 0, 320, 180, 0),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 34393296913,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 2, 0, 1, 0, 0, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 67, 0, 0, 160, 67, 0, 0, 52, 67, 0, 0, 160, 67, 0, 0, 0, 0)
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w7ni"]
+size = Vector2(32, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eglq2"]
+size = Vector2(32, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btda1"]
+size = Vector2(1088, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsyfn"]
+size = Vector2(1088, 32)
+
+[node name="TestLevel" type="Node2D" unique_id=1670862258]
+
+[node name="Background" type="MeshInstance2D" parent="." unique_id=939421344]
+texture_filter = 1
+scale = Vector2(3.6, 3.6)
+mesh = SubResource("ArrayMesh_dtjkg")
+texture = ExtResource("1_iti4p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background" unique_id=441054441]
+position = Vector2(315.55557, 90.00001)
+scale = Vector2(0.2777778, 0.2777778)
+
+[node name="LeftWall" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=918428546]
+position = Vector2(-1120, 3.0517578e-05)
+shape = SubResource("RectangleShape2D_7w7ni")
+
+[node name="RightWall" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=420178727]
+position = Vector2(0, -3.0517578e-05)
+shape = SubResource("RectangleShape2D_eglq2")
+
+[node name="TopWall" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=115471296]
+position = Vector2(-560, -308.00003)
+shape = SubResource("RectangleShape2D_btda1")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=1160980389]
+position = Vector2(-560, 307.99997)
+shape = SubResource("RectangleShape2D_rsyfn")
+
+[node name="Node" type="Node" parent="." unique_id=2044169234]
+
+[node name="Player" parent="Node" unique_id=1820626433 instance=ExtResource("2_eglq2")]
+position = Vector2(585, 298)
+
+[node name="UI" parent="Node" unique_id=1208099098 instance=ExtResource("2_dtjkg")]
+
+[node name="EnemyTest" parent="." unique_id=1388401607 instance=ExtResource("4_rsyfn")]
+position = Vector2(335, 310)
+scale = Vector2(2.965, 2.965)

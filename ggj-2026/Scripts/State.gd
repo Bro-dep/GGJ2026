@@ -10,6 +10,11 @@ var animation
 var player
 var move_speed
 var selfVar
+var pAttack
+
+var canWalk : bool = true
+var attackCD : bool = false
+
 
 func _init() -> void:
 	pass
@@ -33,8 +38,8 @@ func setup(player):
 	movement.speed = move_speed
 	sprite.play(animation[0])
 
-func physics(player):
+func physics(player, canWalk):
 	if player:
-		var velo = movement.walk(sprite,animation)
+		var velo = movement.walk(sprite,animation, canWalk)
 		if velo != null:
 			player.velocity = velo

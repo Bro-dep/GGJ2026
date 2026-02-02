@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmq3nd6tgo7nv" path="res://Assets/level/Background1.png" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://tytkvph7rc68" path="res://Scenes/Player/ui.tscn" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://Scenes/Player/player.tscn" id="2_eglq2"]
+[ext_resource type="PackedScene" uid="uid://dtkvtxu84j53k" path="res://Scenes/enemy_test.tscn" id="4_rsyfn"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dtjkg"]
 _surfaces = [{
@@ -41,6 +42,8 @@ texture = ExtResource("1_iti4p")
 [node name="StaticBody2D" type="StaticBody2D" parent="Background" unique_id=441054441]
 position = Vector2(315.55557, 90.00001)
 scale = Vector2(0.2777778, 0.2777778)
+collision_layer = 3
+collision_mask = 3
 
 [node name="LeftWall" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=918428546]
 position = Vector2(-1120, 3.0517578e-05)
@@ -64,3 +67,7 @@ shape = SubResource("RectangleShape2D_rsyfn")
 position = Vector2(585, 298)
 
 [node name="UI" parent="Node" unique_id=1208099098 instance=ExtResource("2_dtjkg")]
+
+[node name="EnemyTest" parent="." unique_id=1388401607 instance=ExtResource("4_rsyfn")]
+position = Vector2(335, 310)
+scale = Vector2(2.965, 2.965)

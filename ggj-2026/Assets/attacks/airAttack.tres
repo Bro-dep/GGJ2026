@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://brgxos17rmeee"]
+
+[ext_resource type="Texture2D" uid="uid://b3unk1m0r83if" path="res://Assets/attacks/airslash-sheet.png" id="1_1uf2p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfswi"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(0, 0, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbpk2"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(11, 0, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v0un"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(22, 0, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtbnw"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(33, 0, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch8us"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(44, 0, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx64a"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(55, 0, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3o86"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(66, 0, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywuua"]
+atlas = ExtResource("1_1uf2p")
+region = Rect2(77, 0, 11, 17)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfswi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbpk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v0un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtbnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch8us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx64a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3o86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywuua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]

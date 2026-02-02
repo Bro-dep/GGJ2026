@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://qd1eb7cl0wc4"]
+
+[ext_resource type="Script" uid="uid://xl6nj1h3dyh1" path="res://Scenes/projectile.gd" id="1_tl4hk"]
+[ext_resource type="Script" uid="uid://2clsoe2uwryl" path="res://Scenes/AttackBox.gd" id="2_yr2qt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tl4hk"]
+radius = 2.108185
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tl4hk"]
+radius = 3.6666667
+height = 20.666668
+
+[node name="projectile" type="RigidBody2D" unique_id=1540696618]
+collision_layer = 2
+collision_mask = 2
+mass = 0.25
+gravity_scale = 0.0
+linear_damp = 0.1
+script = ExtResource("1_tl4hk")
+speed = 150
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=772018099]
+shape = SubResource("CircleShape2D_tl4hk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1023134708]
+texture_filter = 1
+scale = Vector2(3, 3)
+autoplay = "default"
+
+[node name="AttackBox" type="Area2D" parent="." unique_id=324571320]
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_yr2qt")
+metadata/_custom_type_script = "uid://2clsoe2uwryl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=179088223]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tl4hk")
+debug_color = Color(0.92322046, 0.22807875, 0.4073791, 0.41960785)
+
+[node name="kill" type="Timer" parent="." unique_id=1757366124]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="kill" to="." method="_on_kill_timeout"]
