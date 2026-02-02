@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="ggj2026"
+config/description="Locked away deep underground you must find your way out. With the help of these ancient masks you just might find the light at the end of the tunnel."
+config/version="0.0.1"
 run/main_scene="res://Ui/scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -115,6 +117,7 @@ copy_path="res://Ui/"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

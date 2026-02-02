@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmq3nd6tgo7nv" path="res://Assets/level/Background1.png" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://tytkvph7rc68" path="res://Scenes/Player/ui.tscn" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://Scenes/Player/player.tscn" id="2_eglq2"]
+[ext_resource type="PackedScene" uid="uid://cme5t4tcevl66" path="res://Ui/scenes/windows/pause_menu_layer.tscn" id="4_7w7ni"]
 [ext_resource type="PackedScene" uid="uid://dtkvtxu84j53k" path="res://Scenes/enemy_test.tscn" id="4_rsyfn"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dtjkg"]
@@ -67,6 +68,9 @@ shape = SubResource("RectangleShape2D_rsyfn")
 position = Vector2(585, 298)
 
 [node name="UI" parent="Node" unique_id=1208099098 instance=ExtResource("2_dtjkg")]
+
+[node name="PauseMenuLayer" parent="Node" unique_id=797739717 instance=ExtResource("4_7w7ni")]
+visible = false
 
 [node name="EnemyTest" parent="." unique_id=1388401607 instance=ExtResource("4_rsyfn")]
 position = Vector2(335, 310)

@@ -11,3 +11,7 @@ func _on_visibility_changed():
 
 func _ready():
 	visibility_changed.connect(_on_visibility_changed)
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		visible = true

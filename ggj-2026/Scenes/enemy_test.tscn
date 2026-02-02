@@ -9,7 +9,7 @@
 radius = 7.071068
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_421n3"]
-radius = 38.0
+radius = 10.049875
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h6jhh"]
 radius = 18.0
